@@ -124,6 +124,13 @@
    padding: 10px;
  }
 
- .goBack {
-   float: left;
- }
+ .goback {
+	text-align: left;
+	align-self: self-start;
+	cursor: pointer;
+}
+
+#disqus_thread {
+  width: 100%;
+  margin: 20px 0;
+}
