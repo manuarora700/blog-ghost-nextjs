@@ -2,8 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
 
-const CONTENT_API_KEY = 'cf1950cbb71a9436ec40d9fe80';
-const BLOG_URL = 'https://ghost-next-backend.herokuapp.com';
+const {CONTENT_API_KEY, BLOG_URL} = process.env;
 
 type Post = {
   title: string
@@ -36,7 +35,7 @@ const Home:React.FC<{ posts: Post[] }> = (props) =>{
       <h1>Hello to my blog! :)</h1>
       <ul>
         {posts.map((post, index) => {
-          return <li key={post.slug}>
+          return <li key={post.slug} className={styles.padding20}>
             
               <Link href="/post/[slug]" as={`/post/${post.slug}`}>
                 <a>{post.title}</a>
